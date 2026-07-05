@@ -16,6 +16,7 @@ Optionally, for a larger retrieval corpus:
 ## Where to get it
 
 Obtain the files from the official PubMedQA release (the labelled `ori_pqal.json` is available in the dataset's public repository; the larger subsets are linked from there).
+https://github.com/pubmedqa/pubmedqa
 
 ## Where to put it
 
