@@ -1,0 +1,10 @@
+# Core libraries for the explainable RAG pipeline.
+# The notebook is designed for Google Colab (T4 GPU); versions are left
+# loosely pinned so it runs in current Colab environments.
+
+transformers>=4.44
+sentence-transformers
+accelerate
+bitsandbytes
+faiss-cpu
+numpy

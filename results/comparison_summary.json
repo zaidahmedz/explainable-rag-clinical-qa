@@ -1,0 +1,38 @@
+{
+  "No-RAG (Phi-3 only)": {
+    "n": 500,
+    "accuracy": 0.322,
+    "macro_f1": 0.2925307508290525,
+    "per_class_f1": {
+      "yes": 0.4649122807017544,
+      "no": 0.23376623376623376,
+      "maybe": 0.17891373801916932
+    },
+    "retrieval_hit_rate": 0.0,
+    "faithful_rate": 0.0
+  },
+  "MiniLM-RAG": {
+    "n": 500,
+    "accuracy": 0.64,
+    "macro_f1": 0.542906986019637,
+    "per_class_f1": {
+      "yes": 0.7624309392265194,
+      "no": 0.6440677966101696,
+      "maybe": 0.2222222222222222
+    },
+    "retrieval_hit_rate": 0.996,
+    "faithful_rate": 0.91
+  },
+  "BioBERT-RAG (proposed)": {
+    "n": 500,
+    "accuracy": 0.532,
+    "macro_f1": 0.4724330357142857,
+    "per_class_f1": {
+      "yes": 0.66015625,
+      "no": 0.5071428571428572,
+      "maybe": 0.25
+    },
+    "retrieval_hit_rate": 0.88,
+    "faithful_rate": 0.75
+  }
+}

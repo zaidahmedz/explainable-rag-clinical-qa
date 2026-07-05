@@ -47,7 +47,6 @@ Every answer is accompanied by:
 ```
 .
 ├── README.md
-├── LICENSE
 ├── requirements.txt
 ├── .gitignore
 │
@@ -70,10 +69,7 @@ Every answer is accompanied by:
 │   ├── per_class_f1.png                  # per-class F1 (yes/no/maybe)
 │   └── architecture.png                  # pipeline diagram
 │
-└── docs/
-    ├── methodology.md                    # short methodology summary (optional)
-    └── thesis_presentation.pptx          # final video-presentation slides (optional)
-```
+
 
 Notes on what to commit and what to leave out:
 
@@ -133,9 +129,9 @@ If you refer to this work, please cite the thesis:
 Question Answering. MSc Thesis, Liverpool John Moores University.
 ```
 
-## License
+## Usage and reuse
 
-The code in this repository is released under the MIT License (see `LICENSE`). Datasets and pre-trained models are subject to their own licences.
+This repository accompanies an MSc thesis and is provided for reference and to document the work. It is not released under an open-source licence; all rights are reserved by the author. If you would like to reuse any part of the code, please contact the author. Datasets and pre-trained models referenced here are subject to their own licences.
 
 ## Acknowledgements
 

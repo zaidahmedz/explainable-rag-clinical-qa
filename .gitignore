@@ -1,0 +1,29 @@
+# Large / regenerable artefacts — do not commit
+*.npy
+*.index
+faiss.index
+chunk_embeddings.npy
+*_embeddings.npy
+
+# Raw dataset (obtain from official source; see data/README.md)
+data/*.json
+!data/README.md
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.ipynb_checkpoints/
+.venv/
+venv/
+env/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Colab / Drive mount leftovers
+drive/
+sample_data/

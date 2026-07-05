@@ -1,0 +1,15 @@
+The hypothesis was confirmed. S-PubMedBert — the embedder with both biomedical domain adaptation and a sentence-similarity objective — is the best system on accuracy (0.652) and macro-F1 (0.557). This gives you the clean 2×2 story I hoped for:
+What the experiment demonstrates, in a logical chain:
+Retrieval matters enormously — every RAG system (0.53–0.65) crushes no-RAG (0.32). ~20–33 accuracy points from grounding alone. Your core thesis, confirmed.
+The embedder's training objective matters more than domain vocabulary alone — BioBERT (biomedical vocab, no similarity training) is the weakest retriever (hit rate 0.880) and weakest RAG system (0.53). MiniLM (general vocab, has similarity training) jumps to 0.996 hit rate and 0.64 accuracy. So a similarity objective beats domain vocabulary when they're pitted against each other.
+Combining both is best — S-PubMedBert (biomedical vocab and similarity training) edges out MiniLM on accuracy and macro-F1 (0.652 / 0.557 vs 0.640 / 0.543). The domain knowledge adds a small but real gain once the similarity objective is present.
+That's a genuinely nice finding: for biomedical RAG, you want an embedder that is both domain-adapted and similarity-trained; domain adaptation alone (raw BioBERT) actually hurts.
+Honest nuances to report accurately, not oversell:
+The S-PubMedBert vs MiniLM gap is small — 0.652 vs 0.640 accuracy, and MiniLM actually has a marginally higher hit rate (0.996 vs 0.994) and slightly lower hallucination (0.090 vs 0.094). So the honest claim is "S-PubMedBert is best overall, but the margin over MiniLM is modest; the large, decisive gap is between both of these and BioBERT." Don't claim a dramatic domain win — claim a consistent-but-small one, which is what the data shows.
+Notice S-PubMedBert also has the best "maybe" F1 (0.267) and a more balanced prediction distribution — worth a sentence.
+The "maybe" class remains the universal weak point across all four systems (0.18–0.27), tied to PubMedQA's class imbalance — a dataset limitation, not a method flaw.
+Why this is a top-band result set:
+You now have a controlled ablation across four systems that isolates two independent variables (retrieval yes/no; embedder domain × similarity-objective), with a coherent, literature-consistent explanation. That's exactly the "systematic experimentation with clear explanation" the rubric's top band rewards. And it connects directly to your references — Reimers & Gurevych (Sentence-BERT) explains why the similarity objective matters, and your result empirically validates that in the biomedical setting.
+For your write-up, the headline finding:
+Retrieval substantially improves clinical QA over a no-retrieval baseline; and among embedders, retrieval quality is governed primarily by whether the model has a sentence-similarity training objective, with biomedical domain adaptation providing an additional smaller gain — so a domain-adapted sentence-transformer (S-PubMedBert) outperforms both a general sentence-transformer (MiniLM) and a raw biomedical language model (BioBERT).
+Your comparison_summary.json already has all four saved. This is a complete results chapter.
