@@ -71,12 +71,6 @@ Every answer is accompanied by:
 │
 
 
-Notes on what to commit and what to leave out:
-
-- **Do commit** the notebook, the JSON result files, the figures, and the documentation. These are small and are the reproducible record of the work.
-- **Do not commit** the raw PubMedQA data (see licensing below), the FAISS index, or the embedding arrays (`chunk_embeddings.npy`, `*_embeddings.npy`, `faiss.index`). These are large, regenerable artefacts and are excluded via `.gitignore`.
-
----
 
 ## Getting started
 
@@ -113,26 +107,9 @@ Because the generator runs under 4-bit quantisation and library versions evolve,
 ## Datasets and licensing
 
 - **PubMedQA** is used under its own licence (MIT) and is cited as: Jin, Q., Dhingra, B., Liu, Z., Cohen, W. and Lu, X., 2019. *PubMedQA: A Dataset for Biomedical Research Question Answering*. In Proceedings of EMNLP-IJCNLP 2019.
-- The dataset itself is **not** included in this repository; obtain it from the official source.
 - The models used (BioBERT, all-MiniLM-L6-v2, S-PubMedBert-MS-MARCO, and the instruction-tuned generator) are obtained from their respective providers under their own licences.
 
 ## Intended use
 
 This is a **research prototype** built to study explainable retrieval-augmented generation. It is **not** a clinical tool, does **not** provide medical advice or diagnosis, and must not be used as a substitute for professional medical judgement.
 
-## Citation
-
-If you refer to this work, please cite the thesis:
-
-```
-[Your Name], 2026. Explainable Retrieval-Augmented Generation for Clinical
-Question Answering. MSc Thesis, Liverpool John Moores University.
-```
-
-## Usage and reuse
-
-This repository accompanies an MSc thesis and is provided for reference and to document the work. It is not released under an open-source licence; all rights are reserved by the author. If you would like to reuse any part of the code, please contact the author. Datasets and pre-trained models referenced here are subject to their own licences.
-
-## Acknowledgements
-
-Developed as an MSc thesis project. Thanks to the maintainers of PubMedQA and the open-source models and libraries that made this work possible.
